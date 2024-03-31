@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-const allowedOrigins = ['https://explore-neon.vercel.app/'];
+const allowedOrigins = ['https://explore-neon.vercel.app/',"http://localhost:3000"];
 
 const corsOptions = {
   origin: (origin, callback) => {
