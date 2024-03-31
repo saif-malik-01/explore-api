@@ -20,7 +20,7 @@ const corsOptions = {
   }
 };
 
-app.use(cors({origin: '*'}));
+app.use(cors(corsOptions));
 
 const port = 80;
 
@@ -51,6 +51,7 @@ async function getChatGPTResponse(text) {
 }
 
 app.get("/models", (req, res) => {
+  console.log("models");
   const models = getModels();
   res.status(200).json(models);
 });
