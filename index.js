@@ -6,7 +6,21 @@ const { OpenAI } = require("openai");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+
+const allowedOrigins = ['https://explore-neon.vercel.app/'];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
+
 const port = 80;
 
 const openai = new OpenAI({
