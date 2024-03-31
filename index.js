@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(cors({ origin: '*' }));
 
-const port = 443;
+const port = 80;
 
 const openai = new OpenAI({
   apiKey: "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",
