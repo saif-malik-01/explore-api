@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(cors({ origin: '*' }));
 
-const port = 80;
+const port = process.env.PORT || 3000;;
 
 const openai = new OpenAI({
   apiKey: "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",
@@ -133,6 +133,8 @@ app.post("/model", (req, res) => {
   });
 });
 
-app.listen(port,'0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Server running at https://:80/`);
 });
+
+module.exports = app;
