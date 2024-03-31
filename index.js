@@ -7,22 +7,9 @@ const app = express();
 
 app.use(express.json());
 
-const allowedOrigins = ['https://explore-neon.vercel.app/',"http://localhost:3000"];
+app.use(cors({ origin: '*' }));
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    console.log(origin,allowedOrigins.includes(origin) || !origin);
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
-
-app.use(cors(corsOptions));
-
-const port = 80;
+const port = 443;
 
 const openai = new OpenAI({
   apiKey: "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",
