@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
+const https = require('https');
 const { OpenAI } = require("openai");
 
 const app = express();
@@ -9,7 +10,7 @@ app.use(express.json());
 
 app.use(cors({ origin: '*' }));
 
-const port = 80;
+const port = 443;
 
 const openai = new OpenAI({
   apiKey: "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",
@@ -133,7 +134,11 @@ app.post("/model", (req, res) => {
   });
 });
 
+const options = {
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+};
 
-app.listen(port,'0.0.0.0', () => {
-  console.log(`Server running at http://localhost:${port}`);
+https.createServer(options, app).listen(port,'0.0.0.0', () => {
+  console.log(`Server running at https://${ip}:443/`);
 });
