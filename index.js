@@ -140,5 +140,5 @@ const options = {
 };
 
 https.createServer(options, app).listen(port,'0.0.0.0', () => {
-  console.log(`Server running at https://${ip}:443/`);
+  console.log(`Server running at https://:443/`);
 });
