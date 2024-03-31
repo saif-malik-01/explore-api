@@ -7,6 +7,19 @@ const app = express();
 
 app.use(express.json());
 
+const allowedOrigins = ['https://explore-neon.vercel.app/'];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    console.log(origin,allowedOrigins.includes(origin) || !origin);
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
 app.use(cors({origin: '*'}));
 
 const port = 80;
