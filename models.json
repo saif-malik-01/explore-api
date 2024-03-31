@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "sandbox": false,
+    "name": "BERT",
+    "description": "Bidirectional Encoder Representations from Transformers",
+    "visitors": 32,
+    "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/bert-algorithm-5181609-4319676.png",
+    "category": "NLP",
+    "useCases": [
+      "Text classification",
+      "Question answering",
+      "Named entity recognition"
+    ],
+    "framework": "TensorFlow",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2021-08-01",
+    "provider": "Google",
+    "snippet": "from transformers import BertTokenizer, BertModel\nimport torch\n\ntokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\nmodel = BertModel.from_pretrained('bert-base-uncased')\n\ninputs = tokenizer('Hello, my dog is cute', return_tensors='pt')\noutputs = model(**inputs)"
+  },
+  {
+    "id": 2,
+    "name": "GPT-3",
+    "icon": "https://static.vecteezy.com/system/resources/previews/021/059/827/non_2x/chatgpt-logo-chat-gpt-icon-on-white-background-free-vector.jpg",
+    "sandbox": true,
+    "description": "Generative Pre-trained Transformer 3",
+    "visitors": 32,
+    "category": "NLP",
+    "useCases": [
+      "Text generation",
+      "Language translation",
+      "Conversational agents"
+    ],
+    "framework": "OpenAI API",
+    "license": "Proprietary",
+    "latestUpdate": "2020-06-04",
+    "provider": "OpenAI",
+    "snippet": "import openai\n\nopenai.api_key = 'your-api-key'\nresponse = openai.Completion.create(\n  engine='text-davinci-003',\n  prompt='Translate the following English text to French: \"Hello, how are you?\"',\n  max_tokens=60\n)\nprint(response.choices[0].text.strip())"
+  },
+  {
+    "id": 3,
+    "sandbox": false,
+    "icon": "https://dz2cdn1.dzone.com/storage/temp/15570921-1642931187780.png",
+    "name": "Transformer-XL",
+    "description": "Transformer-XL is a variant of the Transformer model designed to handle longer sequences of data.",
+    "visitors": 6,
+    "category": "NLP",
+    "useCases": [
+      "Text generation",
+      "Language modeling",
+      "Speech synthesis"
+    ],
+    "framework": "PyTorch",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2021-09-15",
+    "provider": "Facebook",
+    "snippet": "from transformers import TransfoXLTokenizer, TransfoXLModel\nimport torch\n\ntokenizer = TransfoXLTokenizer.from_pretrained('transfo-xl-wt103')\nmodel = TransfoXLModel.from_pretrained('transfo-xl-wt103')\n\ninputs = tokenizer('The quick brown fox', return_tensors='pt')\noutputs = model(**inputs)"
+  },
+  {
+    "id": 4,
+    "name": "DALL-E",
+    "icon": "https://techcrunch.com/wp-content/uploads/2019/03/lp-logo-3.jpg",
+    "sandbox": false,
+    "description": "DALL-E is a neural network architecture for generating images from textual descriptions.",
+    "visitors": 0,
+    "category": "Computer Vision",
+    "useCases": [
+      "Image generation",
+      "Artistic creation"
+    ],
+    "framework": "PyTorch",
+    "license": "Open Source",
+    "latestUpdate": "2021-04-06",
+    "provider": "OpenAI",
+    "snippet": "from dalle_pytorch import DALLE\nimport torch\n\nmodel = DALLE.from_pretrained('babbage')\n\ntext = 'a painting of a colorful bird'\nimage = model.generate_images(text)\nimage.show()"
+  },
+  {
+    "id": 5,
+    "name": "RoBERTa",
+    "icon": "https://wellcreator.com/blog/wp-content/uploads/2021/10/facebook-meta-la-gi-vi-sao-facebook-lai-doi-ten-thanh-meta_62877b36706e8.jpeg",
+    "sandbox": false,
+    "description": "RoBERTa is a variant of the BERT model with improved training techniques.",
+    "visitors": 2,
+    "category": "NLP",
+    "useCases": [
+      "Text classification",
+      "Question answering",
+      "Named entity recognition"
+    ],
+    "framework": "PyTorch",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2021-03-10",
+    "provider": "Facebook",
+    "snippet": "from transformers import RobertaTokenizer, RobertaModel\nimport torch\n\ntokenizer = RobertaTokenizer.from_pretrained('roberta-base')\nmodel = RobertaModel.from_pretrained('roberta-base')\n\ninputs = tokenizer('Hello, my dog is cute', return_tensors='pt')\noutputs = model(**inputs)"
+  },
+  {
+    "id": 6,
+    "sandbox": false,
+    "icon": "https://static.thenounproject.com/png/2424485-200.png",
+    "name": "ResNet",
+    "description": "ResNet (Residual Neural Network) is a deep learning architecture used for image classification.",
+    "visitors": 0,
+    "category": "Computer Vision",
+    "useCases": [
+      "Image classification",
+      "Object detection"
+    ],
+    "framework": "PyTorch",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2015-12-10",
+    "provider": "Microsoft",
+    "snippet": "from torchvision import models\n\nmodel = models.resnet50(pretrained=True)\nmodel.eval()"
+  },
+  {
+    "id": 7,
+    "sandbox": false,
+    "name": "YOLO",
+    "icon": "https://seeklogo.com/images/Y/yolo-logo-95CAABEB95-seeklogo.com.png",
+    "description": "YOLO (You Only Look Once) is a real-time object detection system.",
+    "visitors": 0,
+    "category": "Computer Vision",
+    "useCases": [
+      "Object detection",
+      "Traffic surveillance"
+    ],
+    "framework": "Darknet",
+    "license": "Open Source",
+    "latestUpdate": "2018-04-08",
+    "provider": "Joseph Redmon",
+    "snippet": "from darknet import Darknet\n\nmodel = Darknet('cfg/yolov3.cfg')\nmodel.load_weights('yolov3.weights')\n\nimage = 'path_to_image.jpg'\nresults = model.detect(image)"
+  },
+  {
+    "id": 8,
+    "sandbox": false,
+    "name": "ALBERT",
+    "icon": "https://albert.ai/wp-content/uploads/2023/01/albertzoomd-logo_01-01.png",
+    "description": "ALBERT (A Lite BERT) is a lightweight version of the BERT model.",
+    "visitors": 0,
+    "category": "NLP",
+    "useCases": [
+      "Text classification",
+      "Question answering",
+      "Named entity recognition"
+    ],
+    "framework": "TensorFlow",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2020-02-01",
+    "provider": "Google",
+    "snippet": "from transformers import AlbertTokenizer, AlbertModel\nimport torch\n\ntokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')\nmodel = AlbertModel.from_pretrained('albert-base-v2')\n\ninputs = tokenizer('Hello, my dog is cute', return_tensors='pt')\noutputs = model(**inputs)"
+  },
+  {
+    "id": 9,
+    "sandbox": false,
+    "name": "DenseNet",
+    "icon": "https://cdn-icons-png.flaticon.com/512/5787/5787332.png",
+    "description": "DenseNet (Densely Connected Convolutional Networks) is a deep learning architecture for image classification.",
+    "visitors": 2,
+    "category": "Computer Vision",
+    "useCases": [
+      "Image classification",
+      "Medical image analysis"
+    ],
+    "framework": "PyTorch",
+    "license": "Apache License 2.0",
+    "latestUpdate": "2017-08-04",
+    "provider": "Cornell University",
+    "snippet": "from torchvision import models\n\nmodel = models.densenet121(pretrained=True)\nmodel.eval()"
+  },
+  {
+    "id": 10,
+    "sandbox": false,
+    "name": "VGG",
+    "icon": "https://miro.medium.com/v2/resize:fit:562/1*7CB6vtNKbnh-eXlRYNypOg.png",
+    "description": "VGG (Visual Geometry Group) is a deep convolutional neural network architecture for image classification.",
+    "visitors": 0,
+    "category": "Computer Vision",
+    "useCases": [
+      "Image classification",
+      "Object detection"
+    ],
+    "framework": "PyTorch",
+    "license": "Non-commercial",
+    "latestUpdate": "2014-09-19",
+    "provider": "Visual Geometry Group",
+    "snippet": "from torchvision import models\n\nmodel = models.vgg16(pretrained=True)\nmodel.eval()"
+  }
+]
